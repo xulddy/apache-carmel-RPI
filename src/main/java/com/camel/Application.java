@@ -13,12 +13,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
 import javax.ws.rs.core.MediaType;
 
 @SpringBootApplication
 @ComponentScan(basePackages="com.camel")
+@Configuration
 public class Application {
 
     @Value("${api.path}")
@@ -34,4 +36,6 @@ public class Application {
         servlet.setName("CamelServlet");
         return servlet;
     }
+
+
 }

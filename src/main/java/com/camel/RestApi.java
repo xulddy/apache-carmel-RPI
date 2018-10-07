@@ -36,6 +36,9 @@ public class RestApi extends RouteBuilder {
 //                .bindingMode(RestBindingMode.json)
 //                .dataFormatProperty("prettyPrint", "true");
 
+        from("direct:firstRoute")
+                .log("Camel body: ${body}");
+
 
         rest("/api/")
                 .description("Teste REST Service")
